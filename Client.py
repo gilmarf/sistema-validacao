@@ -22,6 +22,7 @@ def connection(send_string):
 
     ssl_sock.connect(('localhost', 10023))
 
+    print "\nToken: ", send_string
     ssl_sock.write(send_string)
 
     data = ssl_sock.read()
@@ -100,7 +101,10 @@ if __name__ == "__main__":
     id = user_login(username, password)
     if id is not None:
         value = hello()
-        send_string = encapsulate(id, value)
-        connection(send_string)
+        if value != 0:
+            send_string = encapsulate(id, value)
+            connection(send_string)
+        else:
+            sys.exit(-1)
 
     db.close()

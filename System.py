@@ -31,7 +31,6 @@ def verify(connstream, data):
     sql = "SELECT * FROM customers WHERE id = %s" % id
     cursor.execute(sql)
     data = cursor.fetchone()
-    print "DAAAAATAAA: ", data
 
     if value <= data[-1]:
         sql = "UPDATE customers SET balance = balance - %f WHERE id = %s" % (value, id)
@@ -40,7 +39,6 @@ def verify(connstream, data):
         sql = "SELECT * FROM customers WHERE id = %s" % id
         cursor.execute(sql)
         data = cursor.fetchone()
-        print "DAAAAATAAA: ", data
 
         ok = 'BIRL,' + str(data[-1])
         connstream.write(ok)
