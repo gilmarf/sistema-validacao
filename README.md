@@ -28,4 +28,4 @@
 - python System.py
 
 
-- python Client.py <cliente> <senha>
+- python Client.py cliente senha
