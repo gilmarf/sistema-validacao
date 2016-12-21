@@ -22,7 +22,7 @@ def connection(send_string):
 
     ssl_sock.connect(('localhost', 10023))
 
-    print "\nToken: ", send_string
+    print "\nToken: ", "["+send_string+"]"
     ssl_sock.write(send_string)
 
     data = ssl_sock.read()
