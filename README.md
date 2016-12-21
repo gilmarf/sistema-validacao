@@ -6,10 +6,10 @@
 - mova 'client-cert.pem' e 'client-key.pem' para o diretório SSLcertificate/dbSite/
 
 - gere um certificado SSL auto-assinado:
-  openssl genrsa -des3 -out server.orig.key 2048
-  openssl rsa -in server.orig.key -out server.key
-  openssl req -new -key server.key -out server.csr
-  openssl x509 -req -days 365 -in server.csr -signkey server.key -out server.crt
+    openssl genrsa -des3 -out server.orig.key 2048
+    openssl rsa -in server.orig.key -out server.key
+    openssl req -new -key server.key -out server.csr
+    openssl x509 -req -days 365 -in server.csr -signkey server.key -out server.crt
   
 - mova 'server.crt' e 'server.key' para o diretório SSLcertificate/sistema/
  
